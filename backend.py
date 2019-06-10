@@ -1,14 +1,14 @@
 from flask import Flask, render_template
 from pyicloud import PyiCloudService
 
-api = PyiCloudService('sweeting.xano@gmail.com')
+api = PyiCloudService('someiclouduser@example.com')
 app =  Flask(__name__)
 
 
 @app.route('/')
 def get_iphone():
 	devices = api.devices
-	iphone = devices['tsW0bdWVmfu6Tk98xwM5kNCAay80OLAc1QvNCuNWt1L+K+OqiwEIGuHYVNSUzmWV'] 
+	iphone = devices['EXAMPLE_DEVICE_ID'] 
 	location = iphone.location()
 
 	return render_template(
